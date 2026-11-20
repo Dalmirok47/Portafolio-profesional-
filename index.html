@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dalmiro Barrios · Ingeniería de Sistemas</title>
+<meta name="description" content="Portafolio de Dalmiro Barrios, estudiante de Ingeniería de Sistemas en Cartagena. Desarrollo web, PWA y asistentes con IA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{
+  --navy:#0A1F4D; --navy-deep:#06122E; --white:#FFFFFF; --mist:#EAF0FA; --line:#C9D5EA; --sky:#8FB0F0;
+  --bg:#FFFFFF; --ink:#0A1F4D; --soft:#3C4F7A; --panel:#EAF0FA; --rule:#C9D5EA;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#081635; --ink:#F2F6FF; --soft:#B7C6E6; --panel:#0D2150; --rule:#1E3470;}
+}
+:root[data-theme="dark"]{--bg:#081635; --ink:#F2F6FF; --soft:#B7C6E6; --panel:#0D2150; --rule:#1E3470;}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,system-ui,sans-serif;line-height:1.08;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+nav{position:sticky;top:0;z-index:5;background:var(--navy-deep);color:var(--white)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px}
+nav a{text-decoration:none;opacity:.85}
+nav a:hover{opacity:1;text-decoration:underline}
+
+.hero{background:var(--navy);color:var(--white);position:relative;overflow:hidden;padding:96px 0 110px}
+.hero::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(143,176,240,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(143,176,240,.13) 1px,transparent 1px);
+  background-size:56px 56px;mask-image:linear-gradient(100deg,transparent 15%,#000 85%);-webkit-mask-image:linear-gradient(100deg,transparent 15%,#000 85%)}
+.hero svg{position:absolute;right:-60px;top:50%;width:420px;height:420px;transform:translateY(-50%);opacity:.9}
+.hero .wrap{position:relative}
+.coords{display:inline-block;border:1px solid var(--sky);color:var(--sky);border-radius:99px;padding:4px 14px;font-size:14px;margin-bottom:26px}
+.hero h1{font-size:clamp(46px,9vw,104px);font-weight:800;letter-spacing:-.03em;max-width:9em}
+.hero p{max-width:34em;font-size:20px;color:#D5E1FA;margin:26px 0 36px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--white)}
+.btn.fill{background:var(--white);color:var(--navy)}
+.btn.fill:hover{background:var(--mist)}
+.btn.line{color:var(--white)}
+.btn.line:hover{background:rgba(255,255,255,.12)}
+
+section{padding:84px 0}
+section.alt{background:var(--panel)}
+h2{font-size:clamp(32px,5vw,50px);font-weight:700;letter-spacing:-.02em;margin-bottom:34px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:56px}
+.about p{margin:0 0 18px;max-width:38em}
+.facts{border-left:4px solid var(--navy);padding-left:22px;align-self:start}
+.facts div{margin-bottom:18px}
+.facts strong{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:22px}
+.facts span{color:var(--soft);font-size:15px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .facts{border-color:var(--sky)}}
+
+.proj{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:230px 1fr;gap:12px 40px;padding:30px 0;border-bottom:1px solid var(--rule)}
+.row h3{font-size:27px;font-weight:700}
+.row .tag{display:block;margin-top:8px;font-size:14px;color:var(--soft)}
+.row p{margin:0 0 12px;max-width:40em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;padding:0;margin:0;list-style:none}
+.chips li{background:var(--navy);color:var(--white);border-radius:6px;padding:3px 11px;font-size:14px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chips li{background:var(--white);color:var(--navy)}}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.item{padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--rule)}
+.item:last-child{border:0;margin:0}
+.item h3{font-size:21px;font-weight:700;margin-bottom:4px}
+.item small{display:block;color:var(--soft);font-size:15px;margin-bottom:6px}
+.item p{margin:0;font-size:16px}
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;padding:0;margin:0;list-style:none}
+.skills li{background:var(--bg);border:1px solid var(--rule);border-left:5px solid var(--navy);padding:14px 16px;border-radius:4px;font-weight:500}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .skills li{border-left-color:var(--sky)}}
+
+.contact{background:var(--navy);color:var(--white);padding:96px 0}
+.contact h2{font-size:clamp(36px,6vw,66px);max-width:11em}
+.contact p{font-size:20px;color:#D5E1FA;max-width:30em;margin:0 0 34px}
+.links{display:flex;gap:14px;flex-wrap:wrap}
+footer{background:var(--navy-deep);color:#9FB2DB;font-size:14px;padding:22px 0 calc(22px + env(safe-area-inset-bottom,0px))}
+
+@media (max-width:760px){
+  nav ul{gap:14px;font-size:14px}
+  .about,.cols,.row{grid-template-columns:1fr}
+  .about{gap:34px}
+  .hero{padding:64px 0 80px}
+  .hero svg{opacity:.35;right:-140px}
+  section{padding:60px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;counter-reset:s;border-top:2px solid var(--ink)}
+.step{padding:24px 24px 8px 0}
+.step h3{font-size:21px;margin-bottom:8px}
+.step h3::before{counter-increment:s;content:counter(s) ". "}
+.step p{margin:0;font-size:16px;color:var(--soft)}
+.row a.go{font-weight:600;display:inline-block;margin-top:2px}
+.mintro{max-width:40em;font-size:19px;margin:-10px 0 30px;color:var(--soft)}
+.steps.five{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.step small{display:block;margin-top:10px;font-size:14px;color:var(--soft);border-left:3px solid var(--navy);padding-left:10px}
+.proof{margin-top:34px;background:var(--navy);color:var(--white);border-radius:8px;padding:24px 28px;font-size:18px}
+.proof b{font-family:'Bricolage Grotesque',sans-serif}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <b>Dalmiro Barrios</b>
+    <ul>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#trayectoria">Trayectoria</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg viewBox="0 0 200 200" fill="none" stroke="#8FB0F0" stroke-width=".8" aria-hidden="true">
+    <circle cx="100" cy="100" r="92"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="44"/>
+    <path d="M100 4v192M4 100h192M32 32l136 136M168 32L32 168" stroke-opacity=".5"/>
+    <path d="M100 18l12 82-12 82-12-82z" fill="#FFFFFF" fill-opacity=".92" stroke="none"/>
+    <path d="M100 18l12 82H88z" fill="#8FB0F0" stroke="none"/>
+  </svg>
+  <div class="wrap">
+    <span class="coords">10.39° N, 75.48° O · Cartagena, Colombia</span>
+    <h1>Dalmiro Barrios</h1>
+    <p>Estudiante de Ingeniería de Sistemas. Desarrollo aplicaciones web y herramientas con inteligencia artificial, y ya tengo una app desplegada para un negocio real.</p>
+    <div class="btns">
+      <a class="btn fill" href="#proyectos">Ver mis proyectos</a>
+      <a class="btn line" href="#contacto">Contactarme</a>
+    </div>
+  </div>
+</header>
+
+<section id="sobre-mi">
+  <div class="wrap about">
+    <div>
+      <h2>Sobre mí</h2>
+      <p>Soy de Cartagena y estoy en séptimo semestre de Ingeniería de Sistemas en la Universidad del Sinú. Antes terminé el tecnólogo en Sistemas de Información y Redes de Computadores, así que entiendo el software y también la red y la infraestructura que lo sostienen.</p>
+      <p>Me gusta construir cosas que se usen de verdad. Hice un sistema para controlar las salidas de botellas en la licorería donde trabajo, pensado para usarse desde el celular. También desarrollo un asistente de voz con IA para el computador.</p>
+      <p>Programo apoyándome en la inteligencia artificial con un método propio, y eso me permite avanzar rápido sin perder el orden del proyecto.</p>
+    </div>
+    <div class="facts">
+      <div><strong>Ingeniería de Sistemas</strong><span>Universidad del Sinú, Cartagena · séptimo semestre</span></div>
+      <div><strong>Tecnólogo titulado</strong><span>Sistemas de Información y Redes de Computadores</span></div>
+      <div><strong>App desplegada</strong><span>Control de inventario para J&amp;N Licores</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos" class="alt">
+  <div class="wrap">
+    <h2>Proyectos</h2>
+    <div class="proj">
+      <article class="row">
+        <div><h3>Control de salidas · J&amp;N Licores</h3><span class="tag">App web PWA · Desplegada</span></div>
+        <div>
+          <p>Sistema para controlar las botellas que salen de una licorería, que antes se llevaba por fotos en WhatsApp. Cada salida queda con foto y comentario obligatorios, fecha y hora de Colombia, y se puede generar un reporte en PDF con el stock y el historial de movimientos. Tiene roles de administrador y vendedor, y funciona igual en Android y en iPhone.</p>
+          <ul class="chips"><li>PWA</li><li>Supabase</li><li>Vite</li><li>Cloudflare</li><li>Reportes en PDF</li></ul>
+          <p style="margin:12px 0 0"><a class="go" href="https://github.com/Dalmirok47/Licoreria-control">Ver el código en GitHub</a> · <a class="go" href="https://licoreria-control.dalmirok47.workers.dev">Abrir la app</a></p>
+        </div>
+      </article>
+      <article class="row">
+        <div><h3>Vidrios Cartagena</h3><span class="tag">Página web para una empresa</span></div>
+        <div>
+          <p>Sitio web para una empresa de Cartagena dedicada a puertas, ventanas, puertas-ventana, divisiones de baño y divisiones de cocina. Los clientes pueden ver los trabajos realizados y pedir su cotización directamente por WhatsApp.</p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Cotización por WhatsApp</li></ul>
+          <p style="margin:12px 0 0"><a class="go" href="https://github.com/Dalmirok47/vidrios-cartagena">Ver el código en GitHub</a></p>
+        </div>
+      </article>
+      <article class="row">
+        <div><h3>Sistema de reservas para restaurantes</h3><span class="tag">Proyecto ABP · Python y SQL</span></div>
+        <div>
+          <p>Sistema de reservas con login de usuarios. Muestra en tiempo real las mesas disponibles y ocupadas de cada restaurante según la fecha, y permite reservar el mismo día o a futuro eligiendo fecha, hora y número de personas. Triggers en la base de datos actualizan el estado de las mesas al confirmar o cancelar una reserva y evitan reservas duplicadas. El módulo de pago está en desarrollo.</p>
+          <ul class="chips"><li>Python</li><li>SQL</li><li>Triggers</li><li>Base de datos relacional</li></ul>
+        </div>
+      </article>
+      <article class="row">
+        <div><h3>Xiro</h3><span class="tag">Asistente de IA por voz</span></div>
+        <div>
+          <p>Agente de inteligencia artificial que controla el computador por voz y responde hablando. Se activa diciendo su nombre, abre aplicaciones como Spotify o el navegador, busca canciones y guarda memoria entre sesiones. La versión 2 es una app de escritorio con un orbe flotante animado, pensada para que cada persona registre su nombre y el asistente se adapte a ella.</p>
+          <ul class="chips"><li>Python</li><li>Ollama</li><li>Reconocimiento de voz</li><li>App de escritorio</li></ul>
+        </div>
+      </article>
+      <article class="row">
+        <div><h3>Videojuego de memoria cognitiva</h3><span class="tag">Proyecto de Ecuaciones Diferenciales</span></div>
+        <div>
+          <p>Lideré este proyecto de la universidad: un videojuego que mide la memoria y modela el aprendizaje con una ecuación diferencial logística, usando el tiempo de respuesta como variable principal. Los resultados se guardan en CSV y el trabajo se documentó en LaTeX.</p>
+          <ul class="chips"><li>Python</li><li>Tkinter</li><li>CSV</li><li>LaTeX</li></ul>
+        </div>
+      </article>
+      <article class="row">
+        <div><h3>Consultoría ITIL 4</h3><span class="tag">Proyecto académico en equipo de 5</span></div>
+        <div>
+          <p>Diagnóstico y plan de mejoramiento de gestión de servicios de TI para una empresa de lácteos, con cronograma, beneficios y modelo de mejora continua. Presentamos el resultado en un recurso web y un video pitch.</p>
+          <ul class="chips"><li>ITIL 4</li><li>Gestión de servicios TI</li><li>Trabajo en equipo</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="metodo">
+  <div class="wrap">
+    <h2>Cómo desarrollo con IA</h2>
+    <p class="mintro">La IA es mi herramienta, pero las decisiones, la revisión y las pruebas son mías. Sigo siempre el mismo proceso, de la idea a la entrega.</p>
+    <div class="steps five">
+      <div class="step"><h3>Defino el problema</h3><p>Escribo qué debe resolver el proyecto y para quién, antes de pedir una sola línea de código.</p><small>Resultado: objetivo claro</small></div>
+      <div class="step"><h3>Diseño la estructura</h3><p>Dejo definidas las pantallas, la base de datos, los roles y las carpetas del proyecto.</p><small>Resultado: base ordenada</small></div>
+      <div class="step"><h3>Elijo la plataforma</h3><p>Decido si es web, móvil o de escritorio y exijo que sea responsive para celular y computador.</p><small>Resultado: funciona en todo equipo</small></div>
+      <div class="step"><h3>Construyo por partes</h3><p>Pido una pantalla o función a la vez, con instrucciones específicas, y la pruebo antes de seguir.</p><small>Resultado: avances fáciles de validar</small></div>
+      <div class="step"><h3>Reviso y versiono</h3><p>Reviso el resultado, pruebo con datos reales y cada entrega llega con sus commits a GitHub.</p><small>Resultado: historial y control de cambios</small></div>
+    </div>
+    <div class="proof"><b>Así lo apliqué en J&amp;N Licores:</b> de la idea a una app desplegada en Cloudflare, con login por roles, reportes en PDF y funcionando en Android y iPhone.</div>
+  </div>
+</section>
+
+<section id="trayectoria" class="alt">
+  <div class="wrap">
+    <h2>Trayectoria</h2>
+    <div class="cols">
+      <div>
+        <div class="item"><h3>J&amp;N Licores</h3><small>Actualidad · Cartagena</small><p>Trabajo en la licorería y desarrollé un sistema para controlar las salidas de botellas.</p></div>
+        <div class="item"><h3>Auxiliar de sistemas · Clínica local</h3><small>Cartagena</small><p>Apoyo técnico a los sistemas de la clínica, donde la tecnología tiene que funcionar siempre.</p></div>
+        <div class="item"><h3>Mesero en eventos</h3><small>Hotelería</small><p>Atención al cliente, trabajo en equipo y rapidez en jornadas largas.</p></div>
+      </div>
+      <div>
+        <h3 style="font-size:24px;margin-bottom:18px">Herramientas</h3>
+        <ul class="skills">
+          <li>Python</li><li>SQL y triggers</li><li>Supabase</li><li>Oracle (PL/SQL)</li><li>Apps PWA</li>
+          <li>GitHub</li><li>Cloudflare</li><li>LaTeX</li><li>Redes de computadores</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <h2>¿Tienes un proyecto o una vacante?</h2>
+    <p>Estoy disponible para trabajar y aprender en equipo. Escríbeme por WhatsApp o llámame y te respondo pronto.</p>
+    <div class="links">
+      <a class="btn fill" href="https://wa.me/573001959189">WhatsApp · 300 195 9189</a>
+      <a class="btn line" href="tel:+573001959189">Llamar</a>
+      <a class="btn line" href="https://github.com/Dalmirok47">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Dalmiro Barrios · Cartagena, Colombia</div>
+</footer>
+
+</body>
+</html>
